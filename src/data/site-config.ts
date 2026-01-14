@@ -58,12 +58,7 @@ const siteConfig: SiteConfig = {
         },
     ],
     hero: {
-        title: 'Edward Hewes',
         text: "Edward Hewes is a freelance journalist and writer specializing in technology, business, and lifestyle topics. With a keen eye for detail and a passion for storytelling, Edward crafts compelling content that engages readers and drives results.",
-        image: {
-            src: hero,
-            alt: 'A person sitting at a desk in front of a computer'
-        },
         actions: [
             {
                 text: 'Get in Touch',
