@@ -2,19 +2,19 @@
 title: FitQuest - AR Fitness Adventure Game
 description: This web application encourages users to embark on thrilling adventures, complete challenges, and achieve fitness goals in an engaging virtual environment.
 publishDate: 'Dec 28 2023'
+---
+title: 'Placeholder 6'
+description: Placeholder portfolio entry.
+publishDate: 'Jan 14 2026'
 seo:
   image:
     src: '../../assets/images/project-6.jpg'
+    alt: Placeholder preview
 ---
 
 ![Project preview](../../assets/images/project-6.jpg)
 
-**Note:** This case study is entirely fictional and created for the purpose of showcasing [Dante Astro.js theme functionality](https://justgoodui.com/astro-themes/dante/).
-
-**Project Overview:**
-FitQuest is an augmented reality (AR) fitness adventure game that revolutionizes traditional workout routines by combining physical exercise with immersive gameplay. This web application encourages users to embark on thrilling adventures, complete challenges, and achieve fitness goals in an engaging virtual environment.
-
-## Objectives
+Short placeholder description. Replace with your project summary and link.
 
 1. Develop a fitness app that leverages augmented reality to make workouts more enjoyable and interactive.
 2. Integrate real-world locations and landmarks into the game, turning everyday environments into exciting adventure settings.

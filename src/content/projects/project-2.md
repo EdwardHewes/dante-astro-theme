@@ -3,19 +3,27 @@ title: 'TimeWarp - Travel Agency Website'
 description: Explore the possibilities of time travel through an immersive website for a fictional travel agency, complete with dynamic destination timelines and interactive historical events.
 publishDate: 'Oct 2 2023'
 isFeatured: true
+---
+title: 'Time Out'
+description: Placeholder portfolio entry for published journalism work at Time Out.
+publishDate: 'Jan 14 2026'
 seo:
   image:
     src: '../../assets/images/project-2.jpg'
-    alt: Project preview
+    alt: Time Out preview
 ---
 
 ![Project preview](../../assets/images/project-2.jpg)
 
-**Note:** This case study is entirely fictional and created for the purpose of showcasing [Dante Astro.js theme functionality](https://justgoodui.com/astro-themes/dante/).
+This is a placeholder entry for a journalism portfolio. Replace this content with a summary of the piece, a short excerpt, and a link to the published article.
 
-**Project Overview:**
-TimeWarp Travel Agency aims to redefine the travel experience by offering an innovative and immersive online platform that explores the concept of time travel. The website combines cutting-edge technology with captivating storytelling to provide users with a unique journey through time.
+## Summary
 
+Short summary or excerpt goes here. Include context, your role, and why this piece is representative of your work.
+
+## Read More
+
+Add the external link to the published article when available.
 > Working with Ethan Donovan was a game-changer for our online presence. Their innovative solutions and attention to detail turned our vision into a reality. The website not only looks fantastic but also functions seamlessly. A true professional who exceeded our expectations!
 
 ## Objectives

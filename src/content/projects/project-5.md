@@ -3,19 +3,19 @@ title: 'PixelPerfect Art Gallery'
 description: PixelPerfect Art Gallery is an innovative online platform that transcends traditional art exhibition spaces.
 publishDate: 'Oct 25 2023'
 isFeatured: true
+---
+title: 'Placeholder 5'
+description: Placeholder portfolio entry.
+publishDate: 'Jan 14 2026'
 seo:
   image:
     src: '../../assets/images/project-5.jpg'
+    alt: Placeholder preview
 ---
 
 ![Project preview](../../assets/images/project-5.jpg)
 
-**Note:** This case study is entirely fictional and created for the purpose of showcasing [Dante Astro.js theme functionality](https://justgoodui.com/astro-themes/dante/).
-
-**Project Overview:**
-PixelPerfect Art Gallery is an innovative online platform that transcends traditional art exhibition spaces. This web application is dedicated to showcasing and celebrating pixel art in the form of Non-Fungible Tokens (NFTs), providing artists with a digital canvas to display their unique creations while ensuring secure ownership through blockchain technology.
-
-## Objectives
+Short placeholder description. Replace with your project summary and link.
 
 1. Create an immersive online gallery experience specifically tailored for pixel art enthusiasts and NFT collectors.
 2. Utilize blockchain technology to authenticate and secure ownership of digital artworks, ensuring a transparent and tamper-proof art marketplace.

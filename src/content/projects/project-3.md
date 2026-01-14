@@ -3,19 +3,19 @@ title: 'RoboChef - AI Powered Cooking Guide'
 description: RoboChef Recipe Assistant is a groundbreaking mobile application that leverages artificial intelligence to redefine the cooking experience.
 publishDate: 'Oct 12 2023'
 isFeatured: true
+---
+title: 'Placeholder 3'
+description: Placeholder portfolio entry.
+publishDate: 'Jan 14 2026'
 seo:
   image:
     src: '../../assets/images/project-3.jpg'
+    alt: Placeholder preview
 ---
 
 ![Project preview](../../assets/images/project-3.jpg)
 
-**Note:** This case study is entirely fictional and created for the purpose of showcasing [Dante Astro.js theme functionality](https://justgoodui.com/astro-themes/dante/).
-
-**Project Overview:**
-RoboChef Recipe Assistant is a groundbreaking mobile application that leverages artificial intelligence to redefine the cooking experience. By combining machine learning with culinary expertise, RoboChef empowers users to explore a world of flavors, improve their cooking skills, and enjoy personalized recipe recommendations.
-
-## Objectives
+Short placeholder description. Replace with your project summary and link.
 
 1. Develop a user-friendly mobile app that utilizes AI to provide personalized recipe suggestions based on user preferences, dietary restrictions, and available ingredients.
 2. Create an interactive cooking guide that assists users with step-by-step instructions, cooking tips, and real-time assistance.

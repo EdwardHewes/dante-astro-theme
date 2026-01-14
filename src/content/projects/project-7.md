@@ -3,19 +3,19 @@ title: CryptoTrader - Cryptocurrency Portfolio Manager
 description: CryptoTrader Dashboard is a comprehensive web application designed to empower cryptocurrency enthusiasts with tools to manage and optimize their digital asset portfolios.
 publishDate: 'Jan 10 2024'
 isFeatured: true
+---
+title: 'Placeholder 7'
+description: Placeholder portfolio entry.
+publishDate: 'Jan 14 2026'
 seo:
   image:
     src: '../../assets/images/project-7.jpg'
+    alt: Placeholder preview
 ---
 
 ![Project preview](../../assets/images/project-7.jpg)
 
-**Note:** This case study is entirely fictional and created for the purpose of showcasing [Dante Astro.js theme functionality](https://justgoodui.com/astro-themes/dante/).
-
-**Project Overview:**
-CryptoTrader Dashboard is a comprehensive web application designed to empower cryptocurrency enthusiasts with tools to manage and optimize their digital asset portfolios. By providing real-time market data, analytics, and portfolio tracking, the dashboard offers a seamless experience for users to monitor and enhance their cryptocurrency investments.
-
-## Objectives
+Short placeholder description. Replace with your project summary and link.
 
 1. Develop a user-friendly and feature-rich dashboard that consolidates real-time data from various cryptocurrency exchanges.
 2. Provide tools for users to analyze market trends, track their portfolio performance, and make informed investment decisions.

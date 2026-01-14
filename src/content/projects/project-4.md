@@ -2,19 +2,19 @@
 title: 'NeuralPlaylist - AI Generated Music Recommendations'
 description: Leveraging advanced algorithms and machine learning, NeuralPlaylist crafts personalized music recommendations based on users' preferences, moods, and even biometric data.
 publishDate: 'Oct 19 2023'
+---
+title: 'Placeholder 4'
+description: Placeholder portfolio entry.
+publishDate: 'Jan 14 2026'
 seo:
   image:
     src: '../../assets/images/project-4.jpg'
+    alt: Placeholder preview
 ---
 
 ![Project preview](../../assets/images/project-4.jpg)
 
-**Note:** This case study is entirely fictional and created for the purpose of showcasing [Dante Astro.js theme functionality](https://justgoodui.com/astro-themes/dante/).
-
-**Project Overview:**
-NeuralPlaylist is a cutting-edge web application that redefines music discovery through the power of artificial intelligence. Leveraging advanced algorithms and machine learning, NeuralPlaylist crafts personalized music recommendations based on users' preferences, moods, and even biometric data.
-
-## Objectives
+Short placeholder description. Replace with your project summary and link.
 
 1. Develop an intuitive and user-friendly web application that utilizes AI to curate personalized music playlists for users.
 2. Implement machine learning models that analyze user behavior, preferences, and physiological responses to create dynamic and context-aware music recommendations.
