@@ -1,9 +1,4 @@
 ---
-title: 'PixelPerfect Art Gallery'
-description: PixelPerfect Art Gallery is an innovative online platform that transcends traditional art exhibition spaces.
-publishDate: 'Oct 25 2023'
-isFeatured: true
----
 title: 'Placeholder 5'
 description: Placeholder portfolio entry.
 publishDate: 'Jan 14 2026'

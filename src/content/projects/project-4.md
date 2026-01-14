@@ -1,8 +1,4 @@
 ---
-title: 'NeuralPlaylist - AI Generated Music Recommendations'
-description: Leveraging advanced algorithms and machine learning, NeuralPlaylist crafts personalized music recommendations based on users' preferences, moods, and even biometric data.
-publishDate: 'Oct 19 2023'
----
 title: 'Placeholder 4'
 description: Placeholder portfolio entry.
 publishDate: 'Jan 14 2026'
