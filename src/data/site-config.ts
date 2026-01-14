@@ -11,10 +11,6 @@ const siteConfig: SiteConfig = {
     title: 'Edward Hewes',
     subtitle: 'Freelance Journalist & Writer',
     description: 'Portfolio website of Edward Hewes, a freelance journalist and writer',
-    image: {
-        src: '/dante-preview.jpg',
-        alt: 'Dante - Astro.js and Tailwind CSS theme'
-    },
     headerNavLinks: [
         {
             text: 'Home',
