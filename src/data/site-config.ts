@@ -8,9 +8,7 @@ const siteConfig: SiteConfig = {
         src: avatar,
         alt: 'Edward Hewes'
     },
-    title: 'Edward Hewes',
-    subtitle: 'Portfolio',
-    description: 'Portfolio website of Edward Hewes, a writer and copywriter',
+    description: 'Portfolio website of Edward Hewes, a freelance journalist and writer',
     image: {
         src: '/dante-preview.jpg',
         alt: 'Dante - Astro.js and Tailwind CSS theme'
@@ -59,9 +57,11 @@ const siteConfig: SiteConfig = {
     ],
     hero: {
         title: 'Edward Hewes',
-        text: "Edward Hewes is a freelance writer specializing in technology, business, and lifestyle topics. With a keen eye for detail and a passion for storytelling, Edward crafts compelling content that engages readers and drives results.",
-        src: hero,
-        alt: 'A person sitting at a desk in front of a computer',
+        text: "Edward Hewes is a freelance journalist and writer specializing in technology, business, and lifestyle topics. With a keen eye for detail and a passion for storytelling, Edward crafts compelling content that engages readers and drives results.",
+        image: {
+            src: hero,
+            alt: 'A person sitting at a desk in front of a computer'
+        },
         actions: [
             {
                 text: 'Get in Touch',
