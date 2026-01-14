@@ -8,6 +8,8 @@ const siteConfig: SiteConfig = {
         src: avatar,
         alt: 'Edward Hewes'
     },
+    title: 'Edward Hewes',
+    subtitle: 'Freelance Journalist & Writer',
     description: 'Portfolio website of Edward Hewes, a freelance journalist and writer',
     image: {
         src: '/dante-preview.jpg',
