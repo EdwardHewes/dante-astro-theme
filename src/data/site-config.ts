@@ -13,6 +13,10 @@ const siteConfig: SiteConfig = {
     description: 'Portfolio website of Edward Hewes, a freelance journalist and writer',
     headerNavLinks: [
         {
+            text: 'Home',
+            href: '/'
+        },
+        {
             text: 'Work',
             href: '/work'
         },
