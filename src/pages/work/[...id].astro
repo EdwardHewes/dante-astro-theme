@@ -1,6 +1,6 @@
 ---
 import type { GetStaticPathsOptions } from 'astro';
-import { type CollectionEntry, getCollection } from 'astro:content';
+import { type CollectionEntry, getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
 export async function getStaticPaths({ rss }: GetStaticPathsOptions) {
@@ -16,7 +16,7 @@ type Props = {
 };
 
 const { item } = Astro.props;
-const { Content } = await item.render();
+const { Content } = await render(item);
 
 // Determine category path for back link
 const categoryPath = item.data.category ? `/work/${item.data.category}` : '/work/all';
