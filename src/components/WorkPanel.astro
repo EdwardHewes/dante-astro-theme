@@ -1,0 +1,32 @@
+---
+export interface Props {
+    title: string;
+    description?: string;
+    href: string;
+    icon?: string;
+}
+
+const { title, description, href, icon } = Astro.props;
+---
+
+<a
+    href={href}
+    class="group relative flex flex-col items-center justify-center rounded-lg border-2 border-main bg-main p-8 text-center transition-all hover:bg-accent hover:text-accent-contrast sm:p-12"
+>
+    {icon && <div class="mb-4 text-4xl sm:text-5xl">{icon}</div>}
+    <h3 class="font-serif text-lg font-medium sm:text-xl md:text-2xl">
+        {title}
+    </h3>
+    {description && <p class="mt-2 text-sm leading-relaxed sm:text-base">{description}</p>}
+    <div class="mt-4 font-serif italic opacity-0 transition-opacity group-hover:opacity-100 sm:text-sm">
+        Explore
+    </div>
+</a>
+
+<style>
+    @media (prefers-color-scheme: dark) {
+        a:hover {
+            @apply border-accent;
+        }
+    }
+</style>

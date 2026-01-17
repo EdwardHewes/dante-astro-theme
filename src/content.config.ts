@@ -50,4 +50,17 @@ const projects = defineCollection({
         })
 });
 
-export const collections = { blog, pages, projects };
+const work = defineCollection({
+    loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/work' }),
+    schema: ({ image }) =>
+        z.object({
+            title: z.string(),
+            description: z.string().optional(),
+            category: z.enum(['web-copy', 'journalism']).optional(),
+            publishDate: z.coerce.date().optional(),
+            image: image().optional(),
+            seo: seoSchema(image).optional()
+        })
+});
+
+export const collections = { blog, pages, projects, work };

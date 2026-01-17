@@ -1,0 +1,34 @@
+---
+import WorkPanel from '../components/WorkPanel.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Work" description="Explore my professional work across web copy, journalism, and more" showHeader={false}>
+    <h1 class="mb-8 font-serif text-2xl leading-tight italic sm:mb-12 sm:text-4xl">Work</h1>
+    <p class="mb-16 leading-relaxed sm:mb-20 sm:text-lg">
+        Discover my professional work across writing, content creation, and journalism.
+    </p>
+
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 md:gap-10">
+        <WorkPanel
+            title="All"
+            description="Browse everything I've worked on across all categories"
+            href="/work/all"
+        />
+        <WorkPanel
+            title="Web Copy & Content"
+            description="Product copy, website content, and copywriting projects"
+            href="/work/web-copy"
+        />
+        <WorkPanel
+            title="Journalism"
+            description="Freelance journalism and feature articles"
+            href="/work/journalism"
+        />
+        <WorkPanel
+            title="Experience & Bio"
+            description="Professional background and experience"
+            href="/work/experience"
+        />
+    </div>
+</BaseLayout>

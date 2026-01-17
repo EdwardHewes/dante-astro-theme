@@ -1,0 +1,42 @@
+---
+import type { GetStaticPathsOptions } from 'astro';
+import { type CollectionEntry, getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths({ rss }: GetStaticPathsOptions) {
+    const workItems = await getCollection('work');
+    return workItems.map((item) => ({
+        params: { id: item.id },
+        props: { item }
+    }));
+}
+
+type Props = {
+    item: CollectionEntry<'work'>;
+};
+
+const { item } = Astro.props;
+const { Content } = await item.render();
+
+// Determine category path for back link
+const categoryPath = item.data.category ? `/work/${item.data.category}` : '/work/all';
+---
+
+<BaseLayout title={item.data.title} description={item.data.description} showHeader={false}>
+    <div class="mb-8 flex items-center justify-between">
+        <div>
+            <h1 class="font-serif text-2xl leading-tight italic sm:text-3xl md:text-4xl">
+                {item.data.title}
+            </h1>
+            {item.data.description && <p class="mt-2 text-base text-gray-600 dark:text-gray-400">{item.data.description}</p>}
+        </div>
+    </div>
+
+    <a href={categoryPath} class="mb-12 inline-block text-sm font-serif italic hover:underline">
+        ← Back to {item.data.category === 'web-copy' ? 'Web Copy & Content' : item.data.category === 'journalism' ? 'Journalism' : 'All Work'}
+    </a>
+
+    <article class="prose prose-invert max-w-none">
+        <Content />
+    </article>
+</BaseLayout>

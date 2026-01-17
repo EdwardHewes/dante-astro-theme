@@ -13,16 +13,12 @@ const siteConfig: SiteConfig = {
     description: 'Portfolio website of Edward Hewes, a freelance journalist and writer',
     headerNavLinks: [
         {
-            text: 'Home',
-            href: '/'
+            text: 'Work',
+            href: '/work'
         },
         {
-            text: 'Projects',
-            href: '/projects'
-        },
-        {
-            text: 'Blog',
-            href: '/blog'
+            text: 'Creative',
+            href: '/creative'
         },
         {
             text: 'Contact',
@@ -35,6 +31,14 @@ const siteConfig: SiteConfig = {
             href: '/'
         },
         {
+            text: 'Work',
+            href: '/work'
+        },
+        {
+            text: 'Creative',
+            href: '/creative'
+        },
+        {
             text: 'Contact',
             href: '/contact'
         },
@@ -42,6 +46,10 @@ const siteConfig: SiteConfig = {
             text: 'Terms',
             href: '/terms'
         },
+        {
+            text: 'Attributions',
+            href: '/attributions'
+        }
     ],
     socialLinks: [
         {

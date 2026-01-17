@@ -1,0 +1,40 @@
+---
+import { getCollection } from 'astro:content';
+import WorkCard from '../../components/WorkCard.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const journalismWork = (await getCollection('work'))
+    .filter((item) => item.data.category === 'journalism')
+    .sort((a, b) => {
+        const dateA = a.data.publishDate ? new Date(a.data.publishDate).getTime() : 0;
+        const dateB = b.data.publishDate ? new Date(b.data.publishDate).getTime() : 0;
+        return dateB - dateA;
+    });
+---
+
+<BaseLayout title="Journalism" description="Freelance journalism and feature articles" showHeader={false}>
+    <div class="mb-8 flex items-center justify-between">
+        <h1 class="font-serif text-2xl leading-tight italic sm:text-3xl">Journalism</h1>
+        <a href="/work" class="text-sm font-serif italic hover:underline">← Back</a>
+    </div>
+
+    <p class="mb-12 leading-relaxed">
+        I contribute regularly to leading publications, covering topics from culture and lifestyle to technology and business.
+    </p>
+
+    <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
+        {
+            journalismWork.map((item) => (
+                <WorkCard
+                    title={item.data.title}
+                    description={item.data.description}
+                    image={item.data.image}
+                    imageAlt={item.data.title}
+                    href={`/work/${item.id}/`}
+                />
+            ))
+        }
+    </div>
+
+    {journalismWork.length === 0 && <p class="mt-12 text-center italic text-gray-600 dark:text-gray-400">No journalism projects yet.</p>}
+</BaseLayout>

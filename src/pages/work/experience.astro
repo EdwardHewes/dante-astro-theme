@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Experience & Bio" description="Professional background and experience" showHeader={false}>
+    <div class="mb-8 flex items-center justify-between">
+        <h1 class="font-serif text-2xl leading-tight italic sm:text-3xl">Experience & Bio</h1>
+        <a href="/work" class="text-sm font-serif italic hover:underline">← Back</a>
+    </div>
+
+    <!-- Bio Section -->
+    <section class="mb-16 sm:mb-20">
+        <h2 class="mb-6 font-serif text-xl italic sm:text-2xl">Bio</h2>
+        <div class="prose prose-invert max-w-none leading-relaxed">
+            <p>
+                [Your professional biography goes here. This is a placeholder section where you can introduce yourself,
+                highlight your expertise, and provide an overview of your professional journey.]
+            </p>
+        </div>
+    </section>
+
+    <!-- Other Experience Section -->
+    <section>
+        <h2 class="mb-6 font-serif text-xl italic sm:text-2xl">Other Experience</h2>
+
+        <div class="space-y-8 sm:space-y-10">
+            <!-- Ryokukou Garden -->
+            <article class="border-l-2 border-main pl-6 sm:pl-8">
+                <h3 class="font-serif text-lg font-medium sm:text-xl">Ryokukou Garden</h3>
+                <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">[Position] • [Duration]</p>
+                <div class="mt-3 leading-relaxed">
+                    <p>[Add details about your role and responsibilities at Ryokukou Garden]</p>
+                </div>
+            </article>
+
+            <!-- FieldHouse Associates -->
+            <article class="border-l-2 border-main pl-6 sm:pl-8">
+                <h3 class="font-serif text-lg font-medium sm:text-xl">FieldHouse Associates</h3>
+                <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">[Position] • [Duration]</p>
+                <div class="mt-3 leading-relaxed">
+                    <p>[Add details about your role and responsibilities at FieldHouse Associates]</p>
+                </div>
+            </article>
+
+            <!-- Haggie Partners -->
+            <article class="border-l-2 border-main pl-6 sm:pl-8">
+                <h3 class="font-serif text-lg font-medium sm:text-xl">Haggie Partners</h3>
+                <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">[Position] • [Duration]</p>
+                <div class="mt-3 leading-relaxed">
+                    <p>[Add details about your role and responsibilities at Haggie Partners]</p>
+                </div>
+            </article>
+
+            <!-- Kroptek -->
+            <article class="border-l-2 border-main pl-6 sm:pl-8">
+                <h3 class="font-serif text-lg font-medium sm:text-xl">Kroptek</h3>
+                <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">[Position] • [Duration]</p>
+                <div class="mt-3 leading-relaxed">
+                    <p>[Add details about your role and responsibilities at Kroptek]</p>
+                </div>
+            </article>
+
+            <!-- USUHJ -->
+            <article class="border-l-2 border-main pl-6 sm:pl-8">
+                <h3 class="font-serif text-lg font-medium sm:text-xl">USUHJ</h3>
+                <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">[Position] • [Duration]</p>
+                <div class="mt-3 leading-relaxed">
+                    <p>[Add details about your role and responsibilities at USUHJ]</p>
+                </div>
+            </article>
+        </div>
+    </section>
+</BaseLayout>

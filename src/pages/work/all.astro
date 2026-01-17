@@ -1,0 +1,34 @@
+---
+import { getCollection } from 'astro:content';
+import WorkCard from '../../components/WorkCard.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const allWork = (await getCollection('work')).sort((a, b) => {
+    const dateA = a.data.publishDate ? new Date(a.data.publishDate).getTime() : 0;
+    const dateB = b.data.publishDate ? new Date(b.data.publishDate).getTime() : 0;
+    return dateB - dateA;
+});
+---
+
+<BaseLayout title="All Work" description="All of my professional work" showHeader={false}>
+    <div class="mb-8 flex items-center justify-between">
+        <h1 class="font-serif text-2xl leading-tight italic sm:text-3xl">All Work</h1>
+        <a href="/work" class="text-sm font-serif italic hover:underline">← Back</a>
+    </div>
+
+    <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
+        {
+            allWork.map((item) => (
+                <WorkCard
+                    title={item.data.title}
+                    description={item.data.description}
+                    image={item.data.image}
+                    imageAlt={item.data.title}
+                    href={`/work/${item.id}/`}
+                />
+            ))
+        }
+    </div>
+
+    {allWork.length === 0 && <p class="mt-12 text-center italic text-gray-600 dark:text-gray-400">No work items yet.</p>}
+</BaseLayout>
