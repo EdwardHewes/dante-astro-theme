@@ -11,7 +11,7 @@ const { title, description, href, icon } = Astro.props;
 
 <a
     href={href}
-    class="group relative flex flex-col items-center justify-center rounded-lg border-2 border-main bg-main p-8 text-center transition-all hover:bg-accent hover:text-accent-contrast sm:p-12"
+    class="group relative flex flex-col items-center justify-center rounded-lg bg-main p-8 text-center transition-all hover:bg-accent hover:text-accent-contrast sm:p-12"
 >
     {icon && <div class="mb-4 text-4xl sm:text-5xl">{icon}</div>}
     <h3 class="font-serif text-lg font-medium sm:text-xl md:text-2xl">
@@ -23,10 +23,3 @@ const { title, description, href, icon } = Astro.props;
     </div>
 </a>
 
-<style>
-    @media (prefers-color-scheme: dark) {
-        a:hover {
-            border-color: currentColor;
-        }
-    }
-</style>

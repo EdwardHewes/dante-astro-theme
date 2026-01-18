@@ -1,54 +1,49 @@
 ---
+import WorkPanel from '../../components/WorkPanel.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="Creative" description="Creative work including film, digital projects, and blog" showHeader={false}>
     <h1 class="mb-8 font-serif text-2xl leading-tight italic sm:mb-12 sm:text-4xl">Creative</h1>
+    <p class="mb-16 leading-relaxed sm:mb-20 sm:text-lg">
+        Explore my creative work across film, digital projects, and written pieces.
+    </p>
 
-    <!-- Tabs Navigation -->
-    <div class="mb-12 border-b-2 border-main">
-        <div class="flex gap-4 sm:gap-6">
-            <button
-                class="creative-tab group relative px-2 py-3 font-serif text-lg transition-colors hover:text-accent sm:text-xl"
-                data-tab="film"
-            >
-                Film
-                <span class="creative-tab-underline absolute bottom-0 left-2 h-0.5 w-[calc(100%-1rem)] translate-y-full bg-current transition-all"></span>
-            </button>
-            <button
-                class="creative-tab group relative px-2 py-3 font-serif text-lg transition-colors hover:text-accent sm:text-xl"
-                data-tab="digital"
-            >
-                Digital
-                <span class="creative-tab-underline absolute bottom-0 left-2 h-0.5 w-[calc(100%-1rem)] translate-y-full bg-current transition-all"></span>
-            </button>
-            <button
-                class="creative-tab group relative px-2 py-3 font-serif text-lg transition-colors hover:text-accent sm:text-xl"
-                data-tab="blog"
-            >
-                Blog
-                <span class="creative-tab-underline absolute bottom-0 left-2 h-0.5 w-[calc(100%-1rem)] translate-y-full bg-current transition-all"></span>
-            </button>
-        </div>
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 sm:gap-8 md:gap-10">
+        <WorkPanel
+            title="Film"
+            description="Video and film projects"
+            href="#film"
+        />
+        <WorkPanel
+            title="Digital"
+            description="Digital art and design work"
+            href="#digital"
+        />
+        <WorkPanel
+            title="Blog"
+            description="Written pieces and articles"
+            href="#blog"
+        />
     </div>
 
     <!-- Film Section -->
-    <section id="film-tab" class="creative-content mb-16 sm:mb-20">
-        <h2 class="mb-6 font-serif text-2xl italic">Film</h2>
+    <section id="film" class="mt-20 mb-16 sm:mt-24 sm:mb-20">
+        <h2 class="mb-8 font-serif text-2xl italic">Film</h2>
         <div class="grid grid-cols-1 gap-8 sm:grid-cols-2">
-            <article class="rounded-lg border-2 border-main p-6">
+            <article class="rounded-lg p-6">
                 <h3 class="font-serif text-lg font-medium sm:text-xl">[Film Project 1]</h3>
                 <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">[Project type] • [Year]</p>
                 <p class="mt-3 leading-relaxed">[Add description of film project]</p>
             </article>
 
-            <article class="rounded-lg border-2 border-main p-6">
+            <article class="rounded-lg p-6">
                 <h3 class="font-serif text-lg font-medium sm:text-xl">[Film Project 2]</h3>
                 <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">[Project type] • [Year]</p>
                 <p class="mt-3 leading-relaxed">[Add description of film project]</p>
             </article>
 
-            <article class="rounded-lg border-2 border-main p-6">
+            <article class="rounded-lg p-6">
                 <h3 class="font-serif text-lg font-medium sm:text-xl">[Film Project 3]</h3>
                 <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">[Project type] • [Year]</p>
                 <p class="mt-3 leading-relaxed">[Add description of film project]</p>
@@ -57,22 +52,22 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     </section>
 
     <!-- Digital Section -->
-    <section id="digital-tab" class="creative-content mb-16 hidden sm:mb-20">
-        <h2 class="mb-6 font-serif text-2xl italic">Digital</h2>
+    <section id="digital" class="mb-16 sm:mb-20">
+        <h2 class="mb-8 font-serif text-2xl italic">Digital</h2>
         <div class="grid grid-cols-1 gap-8 sm:grid-cols-2">
-            <article class="rounded-lg border-2 border-main p-6">
+            <article class="rounded-lg p-6">
                 <h3 class="font-serif text-lg font-medium sm:text-xl">[Digital Project 1]</h3>
                 <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">[Project type] • [Year]</p>
                 <p class="mt-3 leading-relaxed">[Add description of digital project]</p>
             </article>
 
-            <article class="rounded-lg border-2 border-main p-6">
+            <article class="rounded-lg p-6">
                 <h3 class="font-serif text-lg font-medium sm:text-xl">[Digital Project 2]</h3>
                 <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">[Project type] • [Year]</p>
                 <p class="mt-3 leading-relaxed">[Add description of digital project]</p>
             </article>
 
-            <article class="rounded-lg border-2 border-main p-6">
+            <article class="rounded-lg p-6">
                 <h3 class="font-serif text-lg font-medium sm:text-xl">[Digital Project 3]</h3>
                 <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">[Project type] • [Year]</p>
                 <p class="mt-3 leading-relaxed">[Add description of digital project]</p>
@@ -81,8 +76,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     </section>
 
     <!-- Blog Section -->
-    <section id="blog-tab" class="creative-content hidden">
-        <h2 class="mb-6 font-serif text-2xl italic">Blog</h2>
+    <section id="blog" class="mb-16 sm:mb-20">
+        <h2 class="mb-8 font-serif text-2xl italic">Blog</h2>
         <div class="space-y-6">
             <article class="border-l-2 border-main pl-6">
                 <h3 class="font-serif text-lg font-medium">
@@ -113,38 +108,3 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         </div>
     </section>
 </BaseLayout>
-
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const tabs = document.querySelectorAll('.creative-tab');
-        const contents = document.querySelectorAll('.creative-content');
-
-        // Set first tab as active
-        if (tabs.length > 0) {
-            tabs[0].classList.add('active');
-            contents[0].classList.remove('hidden');
-        }
-
-        tabs.forEach((tab) => {
-            tab.addEventListener('click', () => {
-                // Remove active state from all tabs
-                tabs.forEach((t) => t.classList.remove('active'));
-                contents.forEach((c) => c.classList.add('hidden'));
-
-                // Add active state to clicked tab
-                tab.classList.add('active');
-                const tabName = tab.getAttribute('data-tab');
-                const content = document.getElementById(`${tabName}-tab`);
-                if (content) {
-                    content.classList.remove('hidden');
-                }
-            });
-        });
-    });
-</script>
-
-<style>
-    .creative-tab.active .creative-tab-underline {
-        transform: translateY(0);
-    }
-</style>
