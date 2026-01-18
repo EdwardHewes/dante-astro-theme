@@ -21,10 +21,6 @@ const siteConfig: SiteConfig = {
             href: '/work'
         },
         {
-            text: 'Creative',
-            href: '/creative'
-        },
-        {
             text: 'Contact',
             href: '/contact'
         }
@@ -37,10 +33,6 @@ const siteConfig: SiteConfig = {
         {
             text: 'Work',
             href: '/work'
-        },
-        {
-            text: 'Creative',
-            href: '/creative'
         },
         {
             text: 'Contact',
