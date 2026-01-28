@@ -1,5 +1,4 @@
 import avatar from '../assets/images/avatar.jpg';
-import hero from '../assets/images/hero.jpg';
 import type { SiteConfig } from '../types';
 
 const siteConfig: SiteConfig = {
@@ -21,6 +20,10 @@ const siteConfig: SiteConfig = {
             href: '/work'
         },
         {
+            text: 'About',
+            href: '/about'
+        },
+        {
             text: 'Contact',
             href: '/contact'
         }
@@ -31,8 +34,8 @@ const siteConfig: SiteConfig = {
             href: '/'
         },
         {
-            text: 'Work',
-            href: '/work'
+            text: 'About',
+            href: '/about'
         },
         {
             text: 'Contact',
@@ -42,10 +45,6 @@ const siteConfig: SiteConfig = {
             text: 'Terms',
             href: '/terms'
         },
-        {
-            text: 'Attributions',
-            href: '/attributions'
-        }
     ],
     socialLinks: [
         {

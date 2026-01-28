@@ -1,34 +1,143 @@
 ---
-import WorkPanel from '../../components/WorkPanel.astro';
+import { getCollection } from 'astro:content';
+import WorkCard from '../../components/WorkCard.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const allWork = (await getCollection('work')).sort((a, b) => {
+    const dateA = a.data.publishDate ? new Date(a.data.publishDate).getTime() : 0;
+    const dateB = b.data.publishDate ? new Date(b.data.publishDate).getTime() : 0;
+    return dateB - dateA;
+});
+
+const webCopyWork = allWork.filter((item) => item.data.category === 'web-copy');
+const journalismWork = allWork.filter((item) => item.data.category === 'journalism');
 ---
 
 <BaseLayout title="Work" description="Explore my professional work across web copy, journalism, and more" showHeader={false}>
     <h1 class="mb-8 font-serif text-2xl leading-tight italic sm:mb-12 sm:text-4xl">Work</h1>
-    <p class="mb-16 leading-relaxed sm:mb-20 sm:text-lg">
+    <p class="mb-12 leading-relaxed sm:mb-16 sm:text-lg">
         Discover my professional work across writing, content creation, and journalism.
     </p>
 
-    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 md:gap-10">
-        <WorkPanel
-            title="All"
-            description="Browse everything I've worked on across all categories"
-            href="/work/all"
-        />
-        <WorkPanel
-            title="Web Copy & Content"
-            description="Product copy, website content, and copywriting projects"
-            href="/work/web-copy"
-        />
-        <WorkPanel
-            title="Journalism"
-            description="Freelance journalism and feature articles"
-            href="/work/journalism"
-        />
-        <WorkPanel
-            title="Experience & Bio"
-            description="Professional background and experience"
-            href="/work/experience"
-        />
-    </div>
+    <!-- Tag Navigation -->
+    <nav class="mb-12 flex flex-wrap gap-4 sm:mb-16 md:gap-6" aria-label="Work section navigation">
+        <a
+            href="#all-work"
+            class="tag-link font-serif text-lg italic hover:underline hover:decoration-2 hover:underline-offset-4 transition-all sm:text-xl"
+            data-section="all-work"
+        >
+            All
+        </a>
+        <a
+            href="#web-copy"
+            class="tag-link font-serif text-lg italic hover:underline hover:decoration-2 hover:underline-offset-4 transition-all sm:text-xl"
+            data-section="web-copy"
+        >
+            Web Copy & Content
+        </a>
+        <a
+            href="#journalism"
+            class="tag-link font-serif text-lg italic hover:underline hover:decoration-2 hover:underline-offset-4 transition-all sm:text-xl"
+            data-section="journalism"
+        >
+            Journalism
+        </a>
+    </nav>
+
+    <!-- All Work Section -->
+    <section id="all-work" class="mb-16 scroll-mt-24 sm:mb-24 md:scroll-mt-32">
+        <h2 class="mb-8 font-serif text-xl italic sm:text-2xl">All Work</h2>
+        <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
+            {
+                allWork.map((item) => (
+                    <WorkCard
+                        title={item.data.title}
+                        description={item.data.description}
+                        image={item.data.image}
+                        imageAlt={item.data.title}
+                        href={`/work/${item.id}/`}
+                    />
+                ))
+            }
+        </div>
+        {allWork.length === 0 && <p class="mt-12 text-center italic text-gray-600 dark:text-gray-400">No work items yet.</p>}
+    </section>
+
+    <!-- Web Copy & Content Section -->
+    <section id="web-copy" class="mb-16 scroll-mt-24 sm:mb-24 md:scroll-mt-32">
+        <h2 class="mb-8 font-serif text-xl italic sm:text-2xl">Web Copy & Content</h2>
+        <p class="mb-8 leading-relaxed">
+            I create compelling web copy, product documentation, and marketing content that communicates value and engages audiences.
+        </p>
+        <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
+            {
+                webCopyWork.map((item) => (
+                    <WorkCard
+                        title={item.data.title}
+                        description={item.data.description}
+                        image={item.data.image}
+                        imageAlt={item.data.title}
+                        href={`/work/${item.id}/`}
+                    />
+                ))
+            }
+        </div>
+        {webCopyWork.length === 0 && <p class="mt-12 text-center italic text-gray-600 dark:text-gray-400">No web copy projects yet.</p>}
+    </section>
+
+    <!-- Journalism Section -->
+    <section id="journalism" class="scroll-mt-24 md:scroll-mt-32">
+        <h2 class="mb-8 font-serif text-xl italic sm:text-2xl">Journalism</h2>
+        <p class="mb-8 leading-relaxed">
+            I contribute regularly to leading publications, covering topics from culture and lifestyle to technology and business.
+        </p>
+        <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
+            {
+                journalismWork.map((item) => (
+                    <WorkCard
+                        title={item.data.title}
+                        description={item.data.description}
+                        image={item.data.image}
+                        imageAlt={item.data.title}
+                        href={`/work/${item.id}/`}
+                    />
+                ))
+            }
+        </div>
+        {journalismWork.length === 0 && <p class="mt-12 text-center italic text-gray-600 dark:text-gray-400">No journalism projects yet.</p>}
+    </section>
 </BaseLayout>
+
+<style>
+    @reference "tailwindcss";
+
+    .tag-link {
+        position: relative;
+        display: inline-block;
+        text-decoration: none;
+        border-bottom: 2px solid transparent;
+        transition: border-color 0.3s ease;
+    }
+
+    .tag-link:hover {
+        border-bottom-color: currentColor;
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const tagLinks = document.querySelectorAll('.tag-link');
+        
+        tagLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const sectionId = link.getAttribute('data-section');
+                const section = document.getElementById(sectionId);
+                
+                if (section) {
+                    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    });
+</script>

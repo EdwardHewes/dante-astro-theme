@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="About" description="Learn more about Edward Hewes" showHeader={false}>
+    <h1 class="mb-8 font-serif text-2xl leading-tight italic sm:mb-12 sm:text-4xl">About</h1>
+
+    <!-- Bio Section -->
+    <section class="mb-16 sm:mb-20">
+        <h2 class="mb-6 font-serif text-xl italic sm:text-2xl">Bio</h2>
+        <div class="prose prose-invert max-w-none leading-relaxed space-y-4 sm:text-lg">
+            <p>
+                Edward Hewes is a freelance journalist and writer specializing in technology, business, and lifestyle topics. 
+                With a keen eye for detail and a passion for storytelling, Edward crafts compelling content that engages readers and drives results.
+            </p>
+            <p>
+                Based in Japan, Edward combines his international perspective with deep research to produce articles and content 
+                that inform, entertain, and inspire. His work spans from in-depth feature journalism to strategic brand storytelling 
+                and digital content creation.
+            </p>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section>
+        <h2 class="mb-8 font-serif text-xl italic sm:text-2xl">Experience</h2>
+
+        <div class="space-y-10 sm:space-y-12">
+            <!-- Ryokukou Garden -->
+            <article class="border-l-2 border-main pl-6 sm:pl-8">
+                <h3 class="font-serif text-lg font-medium sm:text-xl">Ryokukou Garden</h3>
+                <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">[Position] • [Duration]</p>
+                <div class="mt-3 leading-relaxed">
+                    <p>[Add details about your role and responsibilities at Ryokukou Garden]</p>
+                </div>
+            </article>
+
+            <!-- FieldHouse Associates -->
+            <article class="border-l-2 border-main pl-6 sm:pl-8">
+                <h3 class="font-serif text-lg font-medium sm:text-xl">FieldHouse Associates</h3>
+                <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">[Position] • [Duration]</p>
+                <div class="mt-3 leading-relaxed">
+                    <p>[Add details about your role and responsibilities at FieldHouse Associates]</p>
+                </div>
+            </article>
+
+            <!-- Haggie Partners -->
+            <article class="border-l-2 border-main pl-6 sm:pl-8">
+                <h3 class="font-serif text-lg font-medium sm:text-xl">Haggie Partners</h3>
+                <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">[Position] • [Duration]</p>
+                <div class="mt-3 leading-relaxed">
+                    <p>[Add details about your role and responsibilities at Haggie Partners]</p>
+                </div>
+            </article>
+
+            <!-- Kroptek -->
+            <article class="border-l-2 border-main pl-6 sm:pl-8">
+                <h3 class="font-serif text-lg font-medium sm:text-xl">Kroptek</h3>
+                <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">[Position] • [Duration]</p>
+                <div class="mt-3 leading-relaxed">
+                    <p>[Add details about your role and responsibilities at Kroptek]</p>
+                </div>
+            </article>
+
+            <!-- USUHJ -->
+            <article class="border-l-2 border-main pl-6 sm:pl-8">
+                <h3 class="font-serif text-lg font-medium sm:text-xl">USUHJ</h3>
+                <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">[Position] • [Duration]</p>
+                <div class="mt-3 leading-relaxed">
+                    <p>[Add details about your role and responsibilities at USUHJ]</p>
+                </div>
+            </article>
+        </div>
+    </section>
+</BaseLayout>
