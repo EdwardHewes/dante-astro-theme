@@ -6,7 +6,7 @@ import CustomImage from './CustomImage.astro';
 
 type Props = HeroProps;
 
-const { title, image, text, actions, avatar } = Astro.props;
+const { title, image, text, actions } = Astro.props;
 const photo = (Astro.props as any).photo;
 ---
 
@@ -30,20 +30,7 @@ const photo = (Astro.props as any).photo;
                         </div>
                     )}
 
-                    {avatar?.src && (
-                        <div class="w-full">
-                            <CustomImage
-                                class="rounded-md object-cover w-full h-auto"
-                                src={avatar.src}
-                                alt={avatar.alt || 'Photo'}
-                                widths={[240, 320, 480, 640]}
-                                sizes="(min-width: 768px) 25vw, 50vw"
-                                fetchpriority="high"
-                                loading="eager"
-                                style={{ aspectRatio: '4 / 5' }}
-                            />
-                        </div>
-                    )}
+                    <!-- avatar intentionally removed; only the main photo is shown -->
                 </div>
 
                 <div class="w-full md:w-3/4">
