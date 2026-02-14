@@ -64,10 +64,7 @@ const webCopyByClient = groupByPublication(webCopyWork, false);
 
     <!-- Journalism Section -->
     <section id="journalism" class="mb-20 scroll-mt-24 sm:mb-32 md:scroll-mt-32">
-        <h2 class="mb-4 font-serif text-xl italic sm:text-2xl">Journalism</h2>
-        <p class="mb-8 leading-relaxed text-gray-700 dark:text-gray-300">
-            Cultural journalism covering Osaka's arts, entertainment, and lifestyle scene for leading English-language publications in Japan.
-        </p>
+        <h2 class="mb-12 font-serif text-xl italic sm:text-2xl">Journalism</h2>
         <div class="space-y-0">
             {journalismByPublication.length > 0 ? (
                 journalismByPublication.map((group) => {
@@ -76,6 +73,7 @@ const webCopyByClient = groupByPublication(webCopyWork, false);
                         <WorkPublicationCard
                             publicationName={group.name}
                             publicationUrl={publication?.data.publicationUrl}
+                            publicationDescription={publication?.data.publicationDescription}
                             articles={publication?.data.articles || group.items.map((item) => ({
                                 id: item.id,
                                 title: item.data.title,

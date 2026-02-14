@@ -61,6 +61,7 @@ const work = defineCollection({
             image: image().optional(),
             publication: z.string().optional(),
             publicationUrl: z.string().optional(),
+            publicationDescription: z.string().optional(),
             client: z.string().optional(),
             articles: z.array(z.object({
                 title: z.string(),

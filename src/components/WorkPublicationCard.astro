@@ -2,6 +2,7 @@
 interface Props {
     publicationName: string;
     publicationUrl?: string;
+    publicationDescription?: string;
     articles: Array<{
         id?: string;
         title: string;
@@ -11,7 +12,7 @@ interface Props {
     }>;
 }
 
-const { publicationName, publicationUrl, articles } = Astro.props;
+const { publicationName, publicationUrl, publicationDescription, articles } = Astro.props;
 ---
 
 <div class="publication-group mb-16 border-b border-gray-200 pb-16 last:border-b-0 last:mb-0 last:pb-0 dark:border-gray-800 lg:flex lg:gap-8 lg:mb-20 lg:pb-20">
@@ -37,6 +38,11 @@ const { publicationName, publicationUrl, articles } = Astro.props;
 
     <!-- Right Column: Articles/Projects List -->
     <div class="lg:w-3/4 lg:flex-1">
+        {publicationDescription && (
+            <p class="mb-6 text-sm text-gray-600 dark:text-gray-400">
+                {publicationDescription}
+            </p>
+        )}
         <div class="space-y-8">
             {articles.map((article) => (
                 <div class="article-entry">

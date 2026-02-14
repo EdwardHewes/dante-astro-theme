@@ -4,6 +4,7 @@ description: Cultural journalism covering Osaka's arts, entertainment, and lifes
 category: journalism
 publication: Time Out
 publicationUrl: https://www.timeout.com/profile/edward-hewes
+publicationDescription: "Cultural journalism covering Osaka's arts, entertainment, and lifestyle scene"
 publishDate: 2026-02-04
 articles:
   - title: "Osaka Expo Mascot Myaku-Myaku Is Going on a Tour Around Osaka This Year"
