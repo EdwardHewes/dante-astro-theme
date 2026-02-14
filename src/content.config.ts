@@ -59,6 +59,8 @@ const work = defineCollection({
             category: z.enum(['web-copy', 'journalism']).optional(),
             publishDate: z.coerce.date().optional(),
             image: image().optional(),
+            publication: z.string().optional(),
+            client: z.string().optional(),
             seo: seoSchema(image).optional()
         })
 });

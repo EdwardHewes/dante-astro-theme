@@ -1,0 +1,88 @@
+---
+interface Props {
+    publicationName: string;
+    logoPlaceholder?: string;
+    articles: Array<{
+        id: string;
+        title: string;
+        description?: string;
+        publishDate?: Date;
+    }>;
+}
+
+const { publicationName, logoPlaceholder, articles } = Astro.props;
+---
+
+<div class="publication-group mb-16 border-b border-gray-200 pb-16 last:border-b-0 last:mb-0 last:pb-0 dark:border-gray-800 lg:flex lg:gap-8 lg:mb-20 lg:pb-20">
+    <!-- Left Column: Publication/Client Logo/Name -->
+    <div class="lg:w-1/4 lg:flex-shrink-0 mb-8 lg:mb-0">
+        <div class="publication-logo">
+            {logoPlaceholder ? (
+                <img 
+                    src={logoPlaceholder} 
+                    alt={`${publicationName} logo`}
+                    class="h-16 object-contain mb-4"
+                />
+            ) : (
+                <div class="h-16 bg-gray-200 dark:bg-gray-700 rounded flex items-center justify-center mb-4 w-full max-w-[150px]">
+                    <span class="text-sm text-gray-500 dark:text-gray-400">[Logo]</span>
+                </div>
+            )}
+            <h3 class="font-serif text-lg font-semibold text-gray-900 dark:text-white">
+                {publicationName}
+            </h3>
+        </div>
+    </div>
+
+    <!-- Right Column: Articles/Projects List -->
+    <div class="lg:w-3/4 lg:flex-1">
+        <div class="space-y-8">
+            {articles.map((article) => (
+                <div class="article-entry">
+                    <a
+                        href={`/work/${article.id}/`}
+                        class="block group"
+                    >
+                        <h4 class="font-serif text-base font-semibold text-gray-900 dark:text-white group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2 transition-all">
+                            {article.title}
+                        </h4>
+                    </a>
+                    
+                    {article.description && (
+                        <p class="mt-1 text-sm text-gray-600 dark:text-gray-400 italic">
+                            {article.description}
+                        </p>
+                    )}
+                    
+                    {article.publishDate && (
+                        <p class="mt-2 text-xs text-gray-500 dark:text-gray-500 font-sans">
+                            {new Intl.DateTimeFormat('en-US', { 
+                                year: 'numeric', 
+                                month: 'short', 
+                                day: 'numeric' 
+                            }).format(article.publishDate)}
+                        </p>
+                    )}
+                </div>
+            ))}
+        </div>
+
+        {articles.length === 0 && (
+            <p class="text-gray-500 dark:text-gray-400 italic text-sm">
+                No articles yet.
+            </p>
+        )}
+    </div>
+</div>
+
+<style>
+    .publication-group {
+        scroll-margin-top: 2rem;
+    }
+
+    @media (min-width: 1024px) {
+        .publication-group {
+            scroll-margin-top: 4rem;
+        }
+    }
+</style>

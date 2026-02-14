@@ -2,6 +2,7 @@
 title: Time Out
 description: Lifestyle and culture journalism
 category: journalism
+publication: Time Out
 publishDate: 2024-01-09
 ---
 

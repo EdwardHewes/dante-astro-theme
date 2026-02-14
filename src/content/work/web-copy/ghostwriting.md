@@ -2,6 +2,7 @@
 title: Ghostwriting
 description: Professional ghostwriting services
 category: web-copy
+client: Ghostwriting
 publishDate: 2024-01-11
 ---
 

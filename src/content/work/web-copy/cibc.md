@@ -2,6 +2,7 @@
 title: CIBC
 description: Financial services content and copywriting
 category: web-copy
+client: CIBC
 publishDate: 2024-01-13
 ---
 

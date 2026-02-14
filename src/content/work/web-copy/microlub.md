@@ -2,6 +2,7 @@
 title: MicroLub
 description: Freelance writing and copy for SaaS product
 category: web-copy
+client: MicroLub
 publishDate: 2024-01-15
 ---
 

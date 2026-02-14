@@ -2,6 +2,7 @@
 title: Japan Times
 description: Freelance journalism and feature articles
 category: journalism
+publication: Japan Times
 publishDate: 2024-01-10
 ---
 

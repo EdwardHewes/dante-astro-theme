@@ -2,6 +2,7 @@
 title: Kroptek
 description: Web copy and product documentation
 category: web-copy
+client: Kroptek
 publishDate: 2024-01-14
 ---
 
