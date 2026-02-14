@@ -1,4 +1,5 @@
 import avatar from '../assets/images/avatar.jpg';
+import myPhoto from '../assets/images/my-photo.jpeg';
 import type { SiteConfig } from '../types';
 
 const siteConfig: SiteConfig = {
@@ -64,6 +65,11 @@ const siteConfig: SiteConfig = {
                 href: '/contact'
             }
         ]
+        ,
+        photo: {
+            src: myPhoto,
+            alt: 'Edward Hewes portrait'
+        }
     },
     postsPerPage: 8,
     projectsPerPage: 8
