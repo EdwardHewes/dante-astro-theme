@@ -1,4 +1,4 @@
-import avatar from '../assets/images/my-photo.jpeg';
+import avatar from '../assets/images/avatar.jpg';
 import type { SiteConfig } from '../types';
 
 const siteConfig: SiteConfig = {
