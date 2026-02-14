@@ -36,10 +36,6 @@ const groupByPublication = (items: typeof allWork, isJournalism: boolean) => {
 
 const journalismByPublication = groupByPublication(journalismWork, true);
 const webCopyByClient = groupByPublication(webCopyWork, false);
-const allByPublication = [
-    ...groupByPublication(journalismWork, true),
-    ...groupByPublication(webCopyWork, false)
-];
 ---
 
 <BaseLayout title="Work" description="Explore my professional work across web copy, journalism, and more" showHeader={false}>
@@ -51,11 +47,11 @@ const allByPublication = [
     <!-- Tag Navigation -->
     <nav class="mb-12 flex flex-wrap gap-6 sm:mb-16 lg:gap-8" aria-label="Work section navigation">
         <a
-            href="#all-work"
+            href="#journalism"
             class="tag-link font-serif text-lg italic hover:underline hover:decoration-2 hover:underline-offset-4 transition-all sm:text-xl"
-            data-section="all-work"
+            data-section="journalism"
         >
-            All
+            Journalism
         </a>
         <a
             href="#web-copy"
@@ -64,64 +60,10 @@ const allByPublication = [
         >
             Web Copy & Content
         </a>
-        <a
-            href="#journalism"
-            class="tag-link font-serif text-lg italic hover:underline hover:decoration-2 hover:underline-offset-4 transition-all sm:text-xl"
-            data-section="journalism"
-        >
-            Journalism
-        </a>
     </nav>
 
-    <!-- All Work Section -->
-    <section id="all-work" class="mb-20 scroll-mt-24 sm:mb-32 md:scroll-mt-32">
-        <h2 class="mb-12 font-serif text-xl italic sm:text-2xl">All Work</h2>
-        <div class="space-y-0">
-            {allByPublication.length > 0 ? (
-                allByPublication.map((group) => (
-                    <WorkPublicationCard
-                        publicationName={group.name}
-                        articles={group.items.map((item) => ({
-                            id: item.id,
-                            title: item.data.title,
-                            description: item.data.description,
-                            publishDate: item.data.publishDate
-                        }))}
-                    />
-                ))
-            ) : (
-                <p class="text-center italic text-gray-600 dark:text-gray-400">No work items yet.</p>
-            )}
-        </div>
-    </section>
-
-    <!-- Web Copy & Content Section -->
-    <section id="web-copy" class="mb-20 scroll-mt-24 sm:mb-32 md:scroll-mt-32">
-        <h2 class="mb-4 font-serif text-xl italic sm:text-2xl">Web Copy & Content</h2>
-        <p class="mb-12 leading-relaxed text-gray-700 dark:text-gray-300">
-            I create compelling web copy, product documentation, and marketing content that communicates value and engages audiences.
-        </p>
-        <div class="space-y-0">
-            {webCopyByClient.length > 0 ? (
-                webCopyByClient.map((group) => (
-                    <WorkPublicationCard
-                        publicationName={group.name}
-                        articles={group.items.map((item) => ({
-                            id: item.id,
-                            title: item.data.title,
-                            description: item.data.description,
-                            publishDate: item.data.publishDate
-                        }))}
-                    />
-                ))
-            ) : (
-                <p class="text-center italic text-gray-600 dark:text-gray-400">No web copy projects yet.</p>
-            )}
-        </div>
-    </section>
-
     <!-- Journalism Section -->
-    <section id="journalism" class="scroll-mt-24 md:scroll-mt-32">
+    <section id="journalism" class="mb-20 scroll-mt-24 sm:mb-32 md:scroll-mt-32">
         <h2 class="mb-4 font-serif text-xl italic sm:text-2xl">Journalism</h2>
         <p class="mb-12 leading-relaxed text-gray-700 dark:text-gray-300">
             I contribute regularly to leading publications, covering topics from culture and lifestyle to technology and business.
@@ -141,6 +83,31 @@ const allByPublication = [
                 ))
             ) : (
                 <p class="text-center italic text-gray-600 dark:text-gray-400">No journalism projects yet.</p>
+            )}
+        </div>
+    </section>
+
+    <!-- Web Copy & Content Section -->
+    <section id="web-copy" class="scroll-mt-24 md:scroll-mt-32">
+        <h2 class="mb-4 font-serif text-xl italic sm:text-2xl">Web Copy & Content</h2>
+        <p class="mb-12 leading-relaxed text-gray-700 dark:text-gray-300">
+            I create compelling web copy, product documentation, and marketing content that communicates value and engages audiences.
+        </p>
+        <div class="space-y-0">
+            {webCopyByClient.length > 0 ? (
+                webCopyByClient.map((group) => (
+                    <WorkPublicationCard
+                        publicationName={group.name}
+                        articles={group.items.map((item) => ({
+                            id: item.id,
+                            title: item.data.title,
+                            description: item.data.description,
+                            publishDate: item.data.publishDate
+                        }))}
+                    />
+                ))
+            ) : (
+                <p class="text-center italic text-gray-600 dark:text-gray-400">No web copy projects yet.</p>
             )}
         </div>
     </section>
