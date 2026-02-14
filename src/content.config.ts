@@ -60,7 +60,13 @@ const work = defineCollection({
             publishDate: z.coerce.date().optional(),
             image: image().optional(),
             publication: z.string().optional(),
+            publicationUrl: z.string().optional(),
             client: z.string().optional(),
+            articles: z.array(z.object({
+                title: z.string(),
+                url: z.string(),
+                publishDate: z.string().optional()
+            })).optional(),
             seo: seoSchema(image).optional()
         })
 });

@@ -1,36 +1,19 @@
 ---
 title: Japan Times
-description: Freelance journalism and feature articles
+description: Cultural journalism covering Osaka's arts, entertainment, and lifestyle
 category: journalism
 publication: Japan Times
-publishDate: 2024-01-10
+publicationUrl: https://www.japantimes.co.jp/author/7066/edward-hewes/
+publishDate: 2025-10-21
+articles:
+  - title: "Nakatsu, Osaka: One of the World's Coolest Neighborhoods"
+    url: https://www.japantimes.co.jp/life/2025/10/21/lifestyle/nakatsu-osaka-worlds-coolest-neighborhoods/
+    publishDate: "October 21, 2025"
+  - title: "Osaka Expo Landscaping Gardens"
+    url: https://www.japantimes.co.jp/life/2025/10/04/lifestyle/osaka-expo-landscaping-gardens/
+    publishDate: "October 4, 2025"
 ---
 
 # Japan Times
 
-This is a placeholder for the Japan Times journalism page.
-
-## Publication Details
-
-- **Publication:** The Japan Times
-- **Role:** Freelance Journalist
-- **Focus:** [Add article focus areas]
-
-## Author Profile
-
-[Author profile from The Japan Times will be embedded here]
-
-<iframe 
-    src="https://www.japantimes.co.jp/contributor/" 
-    class="w-full h-96 border rounded"
-    title="Japan Times Author Profile"
-    allowfullscreen>
-</iframe>
-
-## Featured Articles
-
-[Add list of featured articles here]
-
-## About This Work
-
-[Add details about your work with Japan Times]
+Cultural journalism covering Osaka's arts, entertainment, and lifestyle scene for The Japan Times.

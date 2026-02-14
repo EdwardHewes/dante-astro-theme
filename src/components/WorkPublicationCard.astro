@@ -1,23 +1,38 @@
 ---
 interface Props {
     publicationName: string;
+    publicationUrl?: string;
     articles: Array<{
-        id: string;
+        id?: string;
         title: string;
         description?: string;
-        publishDate?: Date;
+        publishDate?: Date | string;
+        url?: string;
     }>;
 }
 
-const { publicationName, articles } = Astro.props;
+const { publicationName, publicationUrl, articles } = Astro.props;
 ---
 
 <div class="publication-group mb-16 border-b border-gray-200 pb-16 last:border-b-0 last:mb-0 last:pb-0 dark:border-gray-800 lg:flex lg:gap-8 lg:mb-20 lg:pb-20">
     <!-- Left Column: Publication/Client Name -->
     <div class="lg:w-1/4 lg:flex-shrink-0 mb-8 lg:mb-0">
-        <h3 class="font-serif text-lg font-semibold text-gray-900 dark:text-white">
-            {publicationName}
-        </h3>
+        {publicationUrl ? (
+            <a 
+                href={publicationUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-block group"
+            >
+                <h3 class="font-serif text-lg font-semibold text-gray-900 dark:text-white group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2 transition-all">
+                    {publicationName}
+                </h3>
+            </a>
+        ) : (
+            <h3 class="font-serif text-lg font-semibold text-gray-900 dark:text-white">
+                {publicationName}
+            </h3>
+        )}
     </div>
 
     <!-- Right Column: Articles/Projects List -->
@@ -25,14 +40,31 @@ const { publicationName, articles } = Astro.props;
         <div class="space-y-8">
             {articles.map((article) => (
                 <div class="article-entry">
-                    <a
-                        href={`/work/${article.id}/`}
-                        class="block group"
-                    >
-                        <h4 class="font-serif text-base font-semibold text-gray-900 dark:text-white group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2 transition-all">
+                    {article.url ? (
+                        <a
+                            href={article.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="block group"
+                        >
+                            <h4 class="font-serif text-base font-semibold text-gray-900 dark:text-white group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2 transition-all">
+                                {article.title}
+                            </h4>
+                        </a>
+                    ) : article.id ? (
+                        <a
+                            href={`/work/${article.id}/`}
+                            class="block group"
+                        >
+                            <h4 class="font-serif text-base font-semibold text-gray-900 dark:text-white group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2 transition-all">
+                                {article.title}
+                            </h4>
+                        </a>
+                    ) : (
+                        <h4 class="font-serif text-base font-semibold text-gray-900 dark:text-white">
                             {article.title}
                         </h4>
-                    </a>
+                    )}
                     
                     {article.description && (
                         <p class="mt-1 text-sm text-gray-600 dark:text-gray-400 italic">
@@ -42,11 +74,14 @@ const { publicationName, articles } = Astro.props;
                     
                     {article.publishDate && (
                         <p class="mt-2 text-xs text-gray-500 dark:text-gray-500 font-sans">
-                            {new Intl.DateTimeFormat('en-US', { 
-                                year: 'numeric', 
-                                month: 'short', 
-                                day: 'numeric' 
-                            }).format(article.publishDate)}
+                            {typeof article.publishDate === 'string' 
+                                ? article.publishDate
+                                : new Intl.DateTimeFormat('en-US', { 
+                                    year: 'numeric', 
+                                    month: 'short', 
+                                    day: 'numeric' 
+                                }).format(article.publishDate)
+                            }
                         </p>
                     )}
                 </div>
