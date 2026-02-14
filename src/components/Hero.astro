@@ -15,16 +15,15 @@ const { title, image, text, actions, avatar } = Astro.props;
             <div class="flex flex-col items-start gap-8 md:flex-row md:items-start">
                 <div class="w-full md:w-1/4 flex-shrink-0">
                     {avatar?.src && (
-                        <div class="w-full">
+                        <div class="w-full overflow-hidden rounded-md" style="aspect-ratio: 4 / 5;">
                             <CustomImage
-                                class="rounded-md object-cover w-full h-auto"
+                                class="w-full h-full object-cover"
                                 src={avatar.src}
                                 alt={avatar.alt || 'Photo'}
                                 widths={[240, 320, 480, 640]}
                                 sizes="(min-width: 768px) 25vw, 50vw"
                                 fetchpriority="high"
                                 loading="eager"
-                                style={{ aspectRatio: '4 / 5' }}
                             />
                         </div>
                     )}
