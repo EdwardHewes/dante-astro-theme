@@ -1,7 +1,6 @@
 ---
 interface Props {
     publicationName: string;
-    logoPlaceholder?: string;
     articles: Array<{
         id: string;
         title: string;
@@ -10,28 +9,15 @@ interface Props {
     }>;
 }
 
-const { publicationName, logoPlaceholder, articles } = Astro.props;
+const { publicationName, articles } = Astro.props;
 ---
 
 <div class="publication-group mb-16 border-b border-gray-200 pb-16 last:border-b-0 last:mb-0 last:pb-0 dark:border-gray-800 lg:flex lg:gap-8 lg:mb-20 lg:pb-20">
-    <!-- Left Column: Publication/Client Logo/Name -->
+    <!-- Left Column: Publication/Client Name -->
     <div class="lg:w-1/4 lg:flex-shrink-0 mb-8 lg:mb-0">
-        <div class="publication-logo">
-            {logoPlaceholder ? (
-                <img 
-                    src={logoPlaceholder} 
-                    alt={`${publicationName} logo`}
-                    class="h-16 object-contain mb-4"
-                />
-            ) : (
-                <div class="h-16 bg-gray-200 dark:bg-gray-700 rounded flex items-center justify-center mb-4 w-full max-w-[150px]">
-                    <span class="text-sm text-gray-500 dark:text-gray-400">[Logo]</span>
-                </div>
-            )}
-            <h3 class="font-serif text-lg font-semibold text-gray-900 dark:text-white">
-                {publicationName}
-            </h3>
-        </div>
+        <h3 class="font-serif text-lg font-semibold text-gray-900 dark:text-white">
+            {publicationName}
+        </h3>
     </div>
 
     <!-- Right Column: Articles/Projects List -->
