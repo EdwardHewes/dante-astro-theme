@@ -33,6 +33,7 @@ export type Subscribe = {
 export type SiteConfig = {
     website: string;
     avatar?: ImageInput;
+    pageAvatar?: ImageInput;
     title: string;
     subtitle?: string;
     description: string;

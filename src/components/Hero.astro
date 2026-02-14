@@ -6,7 +6,7 @@ import CustomImage from './CustomImage.astro';
 
 type Props = HeroProps;
 
-const { title, image, text, actions, avatar } = Astro.props;
+const { title, image, text, actions, avatar, pageAvatar } = Astro.props;
 ---
 
 {
@@ -44,7 +44,25 @@ const { title, image, text, actions, avatar } = Astro.props;
                             {image.caption && <figcaption class="mt-1.5 text-xs sm:text-sm">{image.caption}</figcaption>}
                         </figure>
                     )}
-                    {text && <div class="prose sm:prose-lg max-w-none" set:html={marked.parse(text)} />}
+                    {text && (
+                        <div class="prose sm:prose-lg max-w-none">
+                            <div class="flex items-start gap-4">
+                                {pageAvatar?.src && (
+                                    <div class="flex-shrink-0">
+                                        <CustomImage
+                                            class="w-10 h-10 rounded-full object-cover"
+                                            src={pageAvatar.src}
+                                            alt={pageAvatar.alt || 'Avatar'}
+                                            widths={[40, 80, 160]}
+                                            sizes="40px"
+                                            loading="eager"
+                                        />
+                                    </div>
+                                )}
+                                <div class="min-w-0" set:html={marked.parse(text)} />
+                            </div>
+                        </div>
+                    )}
                     {actions && actions.length > 0 && (
                         <div class="flex flex-wrap gap-4 mt-4">
                             {actions.map((action) => (

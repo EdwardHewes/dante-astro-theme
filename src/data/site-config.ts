@@ -1,10 +1,15 @@
-import avatar from '../assets/images/avatar.jpg';
+import pageIcon from '../assets/images/avatar.jpg';
+import avatar from '../assets/images/my-photo.jpeg';
 import type { SiteConfig } from '../types';
 
 const siteConfig: SiteConfig = {
     website: 'https://edwardhewes.com',
     avatar: {
         src: avatar,
+        alt: 'Edward Hewes'
+    },
+    pageAvatar: {
+        src: pageIcon,
         alt: 'Edward Hewes'
     },
     title: 'Edward Hewes',
