@@ -1,10 +1,10 @@
 ---
 title: Japan Times
-description: Cultural journalism covering Osaka's arts, entertainment, and lifestyle
+description: Cultural and lifestyle journalism for Japan's leading English-language newspaper
 category: journalism
 publication: Japan Times
 publicationUrl: https://www.japantimes.co.jp/author/7066/edward-hewes/
-publicationDescription: "[Add description here - placeholder]"
+publicationDescription: "Cultural and lifestyle journalism for Japan's leading English-language newspaper"
 publishDate: 2025-10-21
 articles:
   - title: "Nakatsu keeps its cool as gentrification looms"
@@ -17,4 +17,4 @@ articles:
 
 # Japan Times
 
-Cultural journalism covering Osaka's arts, entertainment, and lifestyle scene for The Japan Times.
+Cultural and lifestyle journalism for Japan's leading English-language newspaper
