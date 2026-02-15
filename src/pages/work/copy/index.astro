@@ -1,0 +1,61 @@
+---
+import { getCollection } from 'astro:content';
+import WorkPublicationCard from '../../../components/WorkPublicationCard.astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const allWork = (await getCollection('work')).sort((a, b) => {
+    const dateA = a.data.publishDate ? new Date(a.data.publishDate).getTime() : 0;
+    const dateB = b.data.publishDate ? new Date(b.data.publishDate).getTime() : 0;
+    return dateB - dateA;
+});
+
+const webCopyWork = allWork.filter((item) => item.data.category === 'web-copy');
+
+const groupByClient = (items: typeof allWork) => {
+    const grouped = new Map<string, typeof items>();
+    items.forEach((item) => {
+        const key = item.data.client || item.data.title;
+        if (!grouped.has(key)) grouped.set(key, []);
+        grouped.get(key)!.push(item);
+    });
+    return Array.from(grouped.entries()).map(([name, items]) => ({
+        name,
+        items: items.sort((a, b) => {
+            const dateA = a.data.publishDate ? new Date(a.data.publishDate).getTime() : 0;
+            const dateB = b.data.publishDate ? new Date(b.data.publishDate).getTime() : 0;
+            return dateB - dateA;
+        })
+    }));
+};
+
+const webCopyByClient = groupByClient(webCopyWork);
+---
+
+<BaseLayout title="Web Copy & Content" description="Web copy, product writing, and content creation" showHeader={false}>
+    <div class="mb-8 flex items-center justify-between">
+        <h1 class="font-serif text-2xl leading-tight italic sm:text-3xl">Web Copy & Content</h1>
+        <a href="/work" class="text-sm font-serif italic hover:underline">← Back</a>
+    </div>
+
+    <p class="mb-12 leading-relaxed text-gray-700 dark:text-gray-300">
+        I create compelling web copy, product documentation, and marketing content that communicates value and engages audiences.
+    </p>
+
+    <div class="space-y-0">
+        {webCopyByClient.length > 0 ? (
+            webCopyByClient.map((group) => (
+                <WorkPublicationCard
+                    publicationName={group.name}
+                    articles={group.items.map((item) => ({
+                        id: item.id,
+                        title: item.data.title,
+                        description: item.data.description,
+                        publishDate: item.data.publishDate
+                    }))}
+                />
+            ))
+        ) : (
+            <p class="text-center italic text-gray-600 dark:text-gray-400">No web copy projects yet.</p>
+        )}
+    </div>
+</BaseLayout>

@@ -1,0 +1,66 @@
+---
+import { getCollection } from 'astro:content';
+import WorkPublicationCard from '../../../components/WorkPublicationCard.astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const allWork = (await getCollection('work')).sort((a, b) => {
+    const dateA = a.data.publishDate ? new Date(a.data.publishDate).getTime() : 0;
+    const dateB = b.data.publishDate ? new Date(b.data.publishDate).getTime() : 0;
+    return dateB - dateA;
+});
+
+const journalismWork = allWork.filter((item) => item.data.category === 'journalism');
+
+const groupByPublication = (items: typeof allWork) => {
+    const grouped = new Map<string, typeof items>();
+    items.forEach((item) => {
+        const key = item.data.publication || item.data.title;
+        if (!grouped.has(key)) grouped.set(key, []);
+        grouped.get(key)!.push(item);
+    });
+    return Array.from(grouped.entries()).map(([name, items]) => ({
+        name,
+        items: items.sort((a, b) => {
+            const dateA = a.data.publishDate ? new Date(a.data.publishDate).getTime() : 0;
+            const dateB = b.data.publishDate ? new Date(b.data.publishDate).getTime() : 0;
+            return dateB - dateA;
+        })
+    }));
+};
+
+const journalismByPublication = groupByPublication(journalismWork);
+---
+
+<BaseLayout title="Journalism" description="Freelance journalism and feature articles" showHeader={false}>
+    <div class="mb-8 flex items-center justify-between">
+        <h1 class="font-serif text-2xl leading-tight italic sm:text-3xl">Journalism</h1>
+        <a href="/work" class="text-sm font-serif italic hover:underline">← Back</a>
+    </div>
+
+    <p class="mb-12 leading-relaxed">
+        I contribute regularly to leading publications, covering topics from culture and lifestyle to technology and business.
+    </p>
+
+    <div class="space-y-0">
+        {journalismByPublication.length > 0 ? (
+            journalismByPublication.map((group) => {
+                const publication = journalismWork.find(item => (item.data.publication || item.data.title) === group.name);
+                return (
+                    <WorkPublicationCard
+                        publicationName={group.name}
+                        publicationUrl={publication?.data.publicationUrl}
+                        publicationDescription={publication?.data.publicationDescription}
+                        articles={publication?.data.articles || group.items.map((item) => ({
+                            id: item.id,
+                            title: item.data.title,
+                            description: item.data.description,
+                            publishDate: item.data.publishDate
+                        }))}
+                    />
+                );
+            })
+        ) : (
+            <p class="text-center italic text-gray-600 dark:text-gray-400">No journalism projects yet.</p>
+        )}
+    </div>
+</BaseLayout>
