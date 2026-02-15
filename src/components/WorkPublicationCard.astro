@@ -44,7 +44,7 @@ const { publicationName, publicationUrl, publicationDescription, articles } = As
             </p>
         )}
         <div class="relative">
-            <div class="space-y-8 max-h-96 overflow-y-auto scroll-smooth pr-4 lg:pr-8" tabindex="0">
+            <div class="space-y-8 max-h-48 overflow-y-auto scroll-smooth pr-4 lg:pr-8" tabindex="0">
                 {articles.map((article) => (
                     <div class="article-entry">
                     {article.url ? (
@@ -123,21 +123,25 @@ const { publicationName, publicationUrl, publicationDescription, articles } = As
     }
 
     /* Subtle custom scrollbar styling */
-    .publication-group .max-h-96::-webkit-scrollbar {
-        width: 10px;
+    /* More visible scrollbar for the articles container */
+    .publication-group .max-h-48::-webkit-scrollbar {
+        width: 14px;
     }
 
-    .publication-group .max-h-96::-webkit-scrollbar-thumb {
-        background: rgba(0,0,0,0.08);
+    .publication-group .max-h-48::-webkit-scrollbar-thumb {
+        background: rgba(0,0,0,0.22);
+        border-radius: 9999px;
+        border: 3px solid rgba(255,255,255,0.0);
+        background-clip: padding-box;
+    }
+
+    .publication-group .max-h-48::-webkit-scrollbar-track {
+        background: rgba(0,0,0,0.04);
         border-radius: 9999px;
     }
 
-    .publication-group .max-h-96::-webkit-scrollbar-track {
-        background: transparent;
-    }
-
-    .publication-group .max-h-96 {
-        scrollbar-width: thin;
-        scrollbar-color: rgba(0,0,0,0.08) transparent;
+    .publication-group .max-h-48 {
+        scrollbar-width: auto;
+        scrollbar-color: rgba(0,0,0,0.22) rgba(0,0,0,0.04);
     }
 </style>
