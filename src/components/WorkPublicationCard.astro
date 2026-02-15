@@ -43,9 +43,10 @@ const { publicationName, publicationUrl, publicationDescription, articles } = As
                 {publicationDescription}
             </p>
         )}
-        <div class="space-y-8">
-            {articles.map((article) => (
-                <div class="article-entry">
+        <div class="relative">
+            <div class="space-y-8 max-h-96 overflow-y-auto scroll-smooth pr-4 lg:pr-8" tabindex="0">
+                {articles.map((article) => (
+                    <div class="article-entry">
                     {article.url ? (
                         <a
                             href={article.url}
@@ -92,13 +93,21 @@ const { publicationName, publicationUrl, publicationDescription, articles } = As
                     )}
                 </div>
             ))}
-        </div>
+            </div>
 
-        {articles.length === 0 && (
-            <p class="text-gray-500 dark:text-gray-400 italic text-sm">
-                No articles yet.
-            </p>
-        )}
+            {/* Fade gradient indicator at bottom to show more content */}
+            {articles.length > 5 && (
+                <div class="pointer-events-none absolute inset-x-0 bottom-0 h-10">
+                    <div class="h-full bg-gradient-to-b from-transparent to-white dark:to-[#0b0b0b] opacity-90"></div>
+                </div>
+            )}
+
+            {articles.length === 0 && (
+                <p class="text-gray-500 dark:text-gray-400 italic text-sm mt-2">
+                    No articles yet.
+                </p>
+            )}
+        </div>
     </div>
 </div>
 
@@ -111,5 +120,24 @@ const { publicationName, publicationUrl, publicationDescription, articles } = As
         .publication-group {
             scroll-margin-top: 4rem;
         }
+    }
+
+    /* Subtle custom scrollbar styling */
+    .publication-group .max-h-96::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    .publication-group .max-h-96::-webkit-scrollbar-thumb {
+        background: rgba(0,0,0,0.08);
+        border-radius: 9999px;
+    }
+
+    .publication-group .max-h-96::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .publication-group .max-h-96 {
+        scrollbar-width: thin;
+        scrollbar-color: rgba(0,0,0,0.08) transparent;
     }
 </style>
