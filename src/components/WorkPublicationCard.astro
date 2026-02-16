@@ -43,8 +43,8 @@ const { publicationName, publicationUrl, publicationDescription, articles } = As
                 {publicationDescription}
             </p>
         )}
-        <div class="relative">
-            <div class="space-y-8 max-h-64 overflow-y-auto scroll-smooth pr-4 lg:pr-8" tabindex="0">
+        <div class="relative pb-0">
+            <div class="space-y-8 max-h-64 overflow-y-auto scroll-smooth pr-4 lg:pr-8 scrollable-articles" tabindex="0">
                 {articles.map((article) => (
                     <div class="article-entry">
                     {article.url ? (
@@ -95,10 +95,12 @@ const { publicationName, publicationUrl, publicationDescription, articles } = As
             ))}
             </div>
 
-            {/* Fade gradient indicator at bottom to show more content */}
-            {articles.length > 5 && (
-                <div class="pointer-events-none absolute inset-x-0 bottom-0 h-10">
-                    <div class="h-full bg-gradient-to-b from-transparent to-white dark:to-[#0b0b0b] opacity-90"></div>
+            {/* Fade gradient and scroll indicator at bottom */}
+            {articles.length > 3 && (
+                <div class="pointer-events-none absolute inset-x-0 bottom-0 h-16">
+                    <div class="h-full bg-gradient-to-b from-transparent to-white dark:to-[#0b0b0b] opacity-90 flex items-end justify-center pb-2">
+                        <p class="text-xs text-gray-500 dark:text-gray-400 pointer-events-none">Scroll for more</p>
+                    </div>
                 </div>
             )}
 
@@ -122,26 +124,37 @@ const { publicationName, publicationUrl, publicationDescription, articles } = As
         }
     }
 
-    /* Subtle custom scrollbar styling */
-    /* More visible scrollbar for the articles container */
-    .publication-group .max-h-48::-webkit-scrollbar {
-        width: 14px;
+    /* Dark, visible scrollbar styling */
+    .publication-group .scrollable-articles::-webkit-scrollbar {
+        width: 12px;
     }
 
-    .publication-group .max-h-48::-webkit-scrollbar-thumb {
-        background: rgba(0,0,0,0.22);
-        border-radius: 9999px;
-        border: 3px solid rgba(255,255,255,0.0);
+    .publication-group .scrollable-articles::-webkit-scrollbar-thumb {
+        background: #333;
+        border-radius: 6px;
+        border: 2px solid transparent;
         background-clip: padding-box;
     }
 
-    .publication-group .max-h-48::-webkit-scrollbar-track {
-        background: rgba(0,0,0,0.04);
-        border-radius: 9999px;
+    .publication-group .scrollable-articles::-webkit-scrollbar-thumb:hover {
+        background: #000;
     }
 
-    .publication-group .max-h-48 {
+    .publication-group .scrollable-articles::-webkit-scrollbar-track {
+        background: #f0f0f0;
+        border-radius: 6px;
+    }
+
+    .publication-group .scrollable-articles {
         scrollbar-width: auto;
-        scrollbar-color: rgba(0,0,0,0.22) rgba(0,0,0,0.04);
+        scrollbar-color: #333 #f0f0f0;
+    }
+
+    .dark .publication-group .scrollable-articles::-webkit-scrollbar-track {
+        background: #1f2937;
+    }
+
+    .dark .publication-group .scrollable-articles {
+        scrollbar-color: #999 #1f2937;
     }
 </style>

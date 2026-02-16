@@ -35,6 +35,10 @@ const siteConfig: SiteConfig = {
             href: '/'
         },
         {
+            text: 'Work',
+            href: '/work'
+        },
+        {
             text: 'About',
             href: '/about'
         },
@@ -58,7 +62,7 @@ const siteConfig: SiteConfig = {
         },
     ],
     hero: {
-        text: "Edward Hewes is a freelance journalist and writer specializing in technology, business, and lifestyle topics. With a keen eye for detail and a passion for storytelling, Edward crafts compelling content that engages readers and drives results.",
+        text: "This website is a work in progress, bear with!.",
         actions: [
             {
                 text: 'Get in Touch',
