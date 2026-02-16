@@ -13,9 +13,9 @@ articles:
   - title: "How a family-run landscaper turned the Osaka Expo green"
     url: https://www.japantimes.co.jp/life/2025/10/04/lifestyle/osaka-expo-landscaping-gardens/
     publishDate: "October 4, 2025"
-    title: "Off the beaten feed: Comprehensive site steers hikers in Japan past social media noise"
+  - title: "Off the beaten feed: Comprehensive site steers hikers in Japan past social media noise"
     url: https://www.japantimes.co.jp/life/2026/02/16/travel/hiking-mountains-english-guides-mount-fuji/
-    publishDate: "October 4, 2025"
+    publishDate: "February 16, 2026"
 ---
 
 # Japan Times
