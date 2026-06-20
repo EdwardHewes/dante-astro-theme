@@ -1,6 +1,6 @@
 ---
 title: "Vermeer's Girl with a Pearl Earring Is Coming to Osaka (and Only Osaka)"
-publication: "Time Out Osaka"
+publication: "Time Out"
 type: editorial
 date: 2026-01-20
 url: "https://www.timeout.com/osaka/news/vermeers-girl-with-a-pearl-earring-is-coming-to-osaka-and-only-osaka-012026"
