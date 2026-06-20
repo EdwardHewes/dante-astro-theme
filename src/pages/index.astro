@@ -1,9 +1,23 @@
 ---
+import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import bgImage from '../assets/images/Home page background image.JPG';
 ---
 
 <BaseLayout showNav={false}>
     <div class="home">
+        <div class="home__bg">
+            <Image
+                src={bgImage}
+                alt=""
+                aria-hidden="true"
+                widths={[800, 1200, 1920]}
+                sizes="100vw"
+                loading="eager"
+                decoding="async"
+            />
+        </div>
+        <div class="home__overlay"></div>
         <div class="home__inner">
             <h1 class="home__name">Edward Hewes</h1>
             <hr class="home__rule" />
