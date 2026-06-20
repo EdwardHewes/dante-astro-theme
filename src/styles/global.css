@@ -355,6 +355,19 @@ img {
     letter-spacing: 0.08em;
     color: #6e6e6b;
     margin: 0 0 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.45em;
+    flex-wrap: wrap;
+}
+
+.pub-logo {
+    height: 14px;
+    width: auto;
+    display: block;
+    flex-shrink: 0;
+    position: relative;
+    top: 0.5px;
 }
 
 .work-entry__meta span {

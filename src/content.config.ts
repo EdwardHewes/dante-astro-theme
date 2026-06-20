@@ -4,12 +4,13 @@ import { defineCollection, z } from 'astro:content';
 const work = defineCollection({
     loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/work' }),
     schema: z.object({
-        title: z.string(),
-        publication: z.string(),
-        type: z.enum(['editorial', 'commercial']),
-        date: z.coerce.date(),
+        title: z.string().optional().default(''),
+        publication: z.string().optional().default(''),
+        type: z.enum(['editorial', 'commercial']).optional(),
+        date: z.coerce.date().optional(),
         url: z.string().optional(),
-        excerpt: z.string(),
+        excerpt: z.string().optional().default(''),
+        draft: z.boolean().default(false),
     }),
 });
 

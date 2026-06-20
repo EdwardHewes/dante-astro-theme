@@ -1,10 +1,20 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import japanTimesLogo from '../../assets/images/TheJapanTimes - header_logo.svg';
+import itoEnLogo from '../../assets/images/ItoEn - header_logo.svg';
+import timeOutLogo from '../../assets/images/Time_Out_Tokyo_JP_idb097FX2z_1.svg';
 
-const entries = (await getCollection('work')).sort(
-    (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
-);
+const pubLogos: Record<string, { src: string }> = {
+    'The Japan Times': japanTimesLogo,
+    'Time Out': timeOutLogo,
+    'Time Out Osaka': timeOutLogo,
+    'Ito-en': itoEnLogo,
+};
+
+const entries = (await getCollection('work'))
+    .filter((e) => !e.data.draft && e.data.type && e.data.date && e.data.title)
+    .sort((a, b) => b.data.date!.valueOf() - a.data.date!.valueOf());
 
 function formatDate(date: Date) {
     return date.toLocaleDateString('en-GB', { month: 'short', year: 'numeric' });
@@ -34,42 +44,53 @@ function formatDate(date: Date) {
 
         <ul class="work-list" role="list">
             {
-                entries.map((entry) => (
-                    <li class="work-entry" data-type={entry.data.type}>
-                        <p class="work-entry__meta">
-                            {entry.data.publication}
-                            <span aria-hidden="true">—</span>
-                            <time datetime={entry.data.date.toISOString()}>
-                                {formatDate(entry.data.date)}
-                            </time>
-                        </p>
-                        <h2 class="work-entry__title">
-                            {entry.data.url ? (
+                entries.map((entry) => {
+                    const logo = pubLogos[entry.data.publication];
+                    return (
+                        <li class="work-entry" data-type={entry.data.type}>
+                            <p class="work-entry__meta">
+                                {logo && (
+                                    <img
+                                        src={logo.src}
+                                        alt=""
+                                        aria-hidden="true"
+                                        class="pub-logo"
+                                    />
+                                )}
+                                <span>{entry.data.publication}</span>
+                                <span aria-hidden="true">—</span>
+                                <time datetime={entry.data.date.toISOString()}>
+                                    {formatDate(entry.data.date)}
+                                </time>
+                            </p>
+                            <h2 class="work-entry__title">
+                                {entry.data.url ? (
+                                    <a
+                                        href={entry.data.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        {entry.data.title}
+                                    </a>
+                                ) : (
+                                    entry.data.title
+                                )}
+                            </h2>
+                            <p class="work-entry__excerpt">{entry.data.excerpt}</p>
+                            {entry.data.url && (
                                 <a
                                     href={entry.data.url}
+                                    class="work-entry__link"
                                     target="_blank"
                                     rel="noopener noreferrer"
+                                    aria-label={`Read: ${entry.data.title}`}
                                 >
-                                    {entry.data.title}
+                                    Read piece →
                                 </a>
-                            ) : (
-                                entry.data.title
                             )}
-                        </h2>
-                        <p class="work-entry__excerpt">{entry.data.excerpt}</p>
-                        {entry.data.url && (
-                            <a
-                                href={entry.data.url}
-                                class="work-entry__link"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label={`Read: ${entry.data.title}`}
-                            >
-                                Read piece →
-                            </a>
-                        )}
-                    </li>
-                ))
+                        </li>
+                    );
+                })
             }
         </ul>
     </div>
