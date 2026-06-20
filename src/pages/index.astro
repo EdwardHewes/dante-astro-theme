@@ -1,9 +1,24 @@
 ---
-import Hero from '../components/Hero.astro';
-import siteConfig from '../data/site-config';
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout description={siteConfig.description}>
-    <Hero {...siteConfig.hero} avatar={siteConfig.avatar} />
+<BaseLayout showNav={false}>
+    <div class="home">
+        <div class="home__inner">
+            <h1 class="home__name">Edward Hewes</h1>
+            <hr class="home__rule" />
+            <p class="home__tagline">Freelance Writer</p>
+            <p class="home__intro">
+                Words for Time Out Osaka, The Japan Times,<br />
+                and brands including Ito-en and Micro Lub.
+            </p>
+            <ul class="home__nav">
+                <li><a href="/about">About</a></li>
+                <li aria-hidden="true" class="home__nav-sep">—</li>
+                <li><a href="/work">Work</a></li>
+                <li aria-hidden="true" class="home__nav-sep">—</li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
 </BaseLayout>

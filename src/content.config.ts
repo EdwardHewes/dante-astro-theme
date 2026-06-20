@@ -1,75 +1,25 @@
 import { glob } from 'astro/loaders';
-import { defineCollection, z, type ImageFunction } from 'astro:content';
-
-const imageSchema = (image: ImageFunction) =>
-    z.object({
-        src: image(),
-        alt: z.string().optional()
-    });
-
-const seoSchema = (image: ImageFunction) =>
-    z.object({
-        title: z.string().min(5).max(120).optional(),
-        description: z.string().min(15).max(160).optional(),
-        image: imageSchema(image).optional(),
-        pageType: z.enum(['website', 'article']).default('website')
-    });
-
-const blog = defineCollection({
-    loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/blog' }),
-    schema: ({ image }) =>
-        z.object({
-            title: z.string(),
-            excerpt: z.string().optional(),
-            publishDate: z.coerce.date(),
-            updatedDate: z.coerce.date().optional(),
-            isFeatured: z.boolean().default(false),
-            tags: z.array(z.string()).default([]),
-            seo: seoSchema(image).optional()
-        })
-});
-
-const pages = defineCollection({
-    loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/pages' }),
-    schema: ({ image }) =>
-        z.object({
-            title: z.string(),
-            seo: seoSchema(image).optional()
-        })
-});
-
-const projects = defineCollection({
-    loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/projects' }),
-    schema: ({ image }) =>
-        z.object({
-            title: z.string(),
-            description: z.string().optional(),
-            publishDate: z.coerce.date(),
-            isFeatured: z.boolean().default(false),
-            seo: seoSchema(image).optional()
-        })
-});
+import { defineCollection, z } from 'astro:content';
 
 const work = defineCollection({
     loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/work' }),
-    schema: ({ image }) =>
-        z.object({
-            title: z.string(),
-            description: z.string().optional(),
-            category: z.enum(['web-copy', 'journalism']).optional(),
-            publishDate: z.coerce.date().optional(),
-            image: image().optional(),
-            publication: z.string().optional(),
-            publicationUrl: z.string().optional(),
-            publicationDescription: z.string().optional(),
-            client: z.string().optional(),
-            articles: z.array(z.object({
-                title: z.string(),
-                url: z.string(),
-                publishDate: z.string().optional()
-            })).optional(),
-            seo: seoSchema(image).optional()
-        })
+    schema: z.object({
+        title: z.string(),
+        publication: z.string(),
+        type: z.enum(['editorial', 'commercial']),
+        date: z.coerce.date(),
+        url: z.string().optional(),
+        excerpt: z.string(),
+    }),
 });
 
-export const collections = { blog, pages, projects, work };
+const photography = defineCollection({
+    loader: glob({ pattern: '**/*.{yaml,yml}', base: './src/content/photography' }),
+    schema: z.object({
+        src: z.string(),
+        caption: z.string(),
+        alt: z.string(),
+    }),
+});
+
+export const collections = { work, photography };

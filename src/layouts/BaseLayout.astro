@@ -1,35 +1,36 @@
 ---
-import { ClientRouter } from 'astro:transitions';
-import BaseHead, { type Props as HeadProps } from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
 import Nav from '../components/Nav.astro';
+import '../styles/global.css';
 
-export type Props = HeadProps & { showHeader?: boolean };
+interface Props {
+    title?: string;
+    description?: string;
+    showNav?: boolean;
+}
 
-const { showHeader = true, ...head } = Astro.props;
+const {
+    title,
+    description = 'Freelance writer. Words for Time Out Osaka, The Japan Times, and brands including Ito-en and Micro Lub.',
+    showNav = true,
+} = Astro.props;
+
+const pageTitle = title ? `${title} — Edward Hewes` : 'Edward Hewes';
 ---
 
 <!doctype html>
-<html lang="en" class="wrap-break-words antialiased">
+<html lang="en">
     <head>
-        <BaseHead {...head} />
-        <script>
-            if (localStorage.theme === 'dark') {
-                document.documentElement.classList.add('dark');
-            }
-        </script>
-        <ClientRouter />
-        <script is:inline src="/theme-toggle.js"></script>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content={description} />
+        <title>{pageTitle}</title>
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="sitemap" href="/sitemap-index.xml" />
     </head>
-    <body class="bg-main text-main">
-        <div class="flex min-h-screen flex-col px-4 md:px-8 lg:px-12">
-            <Nav />
-            {showHeader && <Header />}
-            <main class="mx-auto w-full max-w-2xl grow md:max-w-4xl lg:max-w-6xl">
-                <slot />
-            </main>
-            <Footer />
-        </div>
+    <body>
+        {showNav && <Nav />}
+        <main>
+            <slot />
+        </main>
     </body>
 </html>

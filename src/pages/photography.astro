@@ -1,0 +1,38 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const photos = await getCollection('photography');
+---
+
+<BaseLayout
+    title="Photography"
+    description="Photography by Edward Hewes."
+>
+    <div class="page-content">
+        <a href="/" class="back-link">← Edward Hewes</a>
+        <h1 class="page-title">Photography</h1>
+
+        {
+            photos.length === 0 ? (
+                <p class="photo-empty">Coming soon.</p>
+            ) : (
+                <div class="photo-grid">
+                    {photos.map((photo) => (
+                        <figure class="photo-item">
+                            <img
+                                src={photo.data.src}
+                                alt={photo.data.alt}
+                                loading="lazy"
+                                decoding="async"
+                            />
+                            <figcaption class="photo-item__caption">
+                                {photo.data.caption}
+                            </figcaption>
+                        </figure>
+                    ))}
+                </div>
+            )
+        }
+    </div>
+</BaseLayout>
