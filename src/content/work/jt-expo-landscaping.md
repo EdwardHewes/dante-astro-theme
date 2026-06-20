@@ -1,5 +1,5 @@
 ---
-title: "How a Family-Run Landscaper Turned the Osaka Expo Green"
+title: "How a family-run landscaper turned the Osaka Expo green"
 publication: "The Japan Times"
 type: editorial
 date: 2025-10-04

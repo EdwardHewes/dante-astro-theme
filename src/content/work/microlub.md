@@ -1,7 +1,7 @@
 ---
-title: "Full Website Copy"
+title: "Emerging from stealth mode: Full website copy for a food-tech startup"
 publication: "Micro Lub"
 type: commercial
-date: 2024-03-01
-excerpt: "Complete website copy for Micro Lub — covering the homepage, product pages, feature descriptions, and user-facing interface text — written to position the microlearning SaaS platform for an international B2B audience."
+date: 2025-12-01
+excerpt: "Complete website copy for Micro Lub — covering the homepage, product pages, feature descriptions, for an international B2B audience."
 ---
