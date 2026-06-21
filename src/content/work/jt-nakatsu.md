@@ -1,6 +1,6 @@
 ---
 title: "Nakatsu Keeps Its Cool as Gentrification Looms"
-publication: "The Japan Times"
+publication:
 type: editorial
 date: 2025-10-21
 url: "https://www.japantimes.co.jp/life/2025/10/21/lifestyle/nakatsu-osaka-worlds-coolest-neighborhoods/"

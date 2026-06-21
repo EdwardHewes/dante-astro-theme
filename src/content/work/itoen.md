@@ -1,6 +1,6 @@
 ---
 title: "Where Do Green Tea and Matcha Come From? Origin, History, and Regions"
-publication: "Ito-en"
+publication:
 type: commercial
 date: 2026-06-01
 url: https://www.itoen-global.com/enjoymore_tea/origins/where-do-green-tea-and-matcha-come-from-origin-history-and-regions.html

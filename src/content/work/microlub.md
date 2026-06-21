@@ -1,6 +1,6 @@
 ---
 title: "Emerging from stealth mode: Full website copy for a food-tech startup"
-publication: "Micro Lub"
+publication:
 type: commercial
 date: 2025-12-01
 url: https://microlub.com/

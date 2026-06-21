@@ -1,6 +1,6 @@
 ---
 title: "Off the beaten feed: Comprehensive site steers hikers in Japan past social media noise"
-publication: "The Japan Times"
+publication:
 type: editorial
 date: 2026-02-16
 url: "https://www.japantimes.co.jp/life/2026/02/16/travel/hiking-mountains-english-guides-mount-fuji/"

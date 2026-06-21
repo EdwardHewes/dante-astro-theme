@@ -1,6 +1,6 @@
 ---
 title: "How Much Caffeine is in Green Tea and Matcha?"
-publication: "Ito-en"
+publication:
 type: commercial
 date: 2026-06-01
 url: https://www.itoen-global.com/enjoymore_tea/balance/how-much-caffeine-is-in-green-tea-and-matcha.html
