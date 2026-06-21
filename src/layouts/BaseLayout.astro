@@ -32,5 +32,18 @@ const pageTitle = title ? `${title} — Edward Hewes` : 'Edward Hewes';
         <main>
             <slot />
         </main>
+        {showNav && (
+            <footer class="site-footer">
+                <ul class="site-footer__links" role="list">
+                    <li>
+                        <a href="https://muckrack.com/edward-hewes-1" target="_blank" rel="noopener noreferrer">Muck Rack</a>
+                    </li>
+                    <li aria-hidden="true" class="site-footer__sep">—</li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/edward-h-732388233/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    </li>
+                </ul>
+            </footer>
+        )}
     </body>
 </html>

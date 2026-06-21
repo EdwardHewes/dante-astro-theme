@@ -428,6 +428,51 @@ img {
     border-radius: 2px;
 }
 
+/* ─── Site footer ────────────────────────────────────────────── */
+
+.site-footer {
+    padding: 1.5rem 2rem;
+    border-top: 1px solid #dadad3;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.site-footer__links {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.site-footer__sep {
+    font-family: 'JetBrains Mono Variable', monospace;
+    font-size: 0.6875rem;
+    color: #dadad3;
+    user-select: none;
+}
+
+.site-footer__links a {
+    font-family: 'JetBrains Mono Variable', monospace;
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #6e6e6b;
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+
+.site-footer__links a:hover {
+    color: #1e1e1e;
+}
+
+.site-footer__links a:focus-visible {
+    outline: 2px solid #c2622a;
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
 /* ─── Contact page ───────────────────────────────────────────── */
 
 .contact-body {
